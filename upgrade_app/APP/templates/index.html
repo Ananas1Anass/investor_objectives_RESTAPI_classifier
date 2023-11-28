@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Rookie Player Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            background: linear-gradient(120deg, #ffbc00, #ff0067);
+        }
+    </style>
+
+</head>
+<body>
+    <!-- NBA logo -->
+    <img src="https://blog.logomyway.com/wp-content/uploads/2017/01/nba-logo-design.jpg" alt="NBA Logo" width="250" height="170">
+
+        <form id="predictionForm" action="{{ url_for('predict') }}" method="post">
+        <h1>NBA Rookie Player Prediction</h1>
+
+        <div id="predictionResult">
+            {% if prediction_text %}
+                {{ prediction_text }}
+            {% endif %}
+        </div>
+
+        <label for="GP">Games Played (GP):</label>
+        <input type="number" id="GP" name="GP" step="1" required value="74"><br>
+
+        <label for="MIN">Minutes Played (MIN):</label>
+        <input type="number" id="MIN" name="MIN" step="0.1" required value="35.2"><br>
+
+        <label for="PTS">Points Per Game (PTS):</label>
+        <input type="number" id="PTS" name="PTS" step="0.1" required value="18.4"><br>
+
+        <label for="FGM">Field Goals Made (FGM):</label>
+        <input type="number" id="FGM" name="FGM" step="0.1" required value="6.9"><br>
+
+        <label for="FGA">Field Goal Attempts (FGA):</label>
+        <input type="number" id="FGA" name="FGA" step="0.1" required value="14.9"><br>
+
+        <label for="FGPercent">Field Goal Percentage (FG%):</label>
+        <input type="number" id="FGPercent" name="FGPercent" step="0.1" required value="46.7"><br>
+
+        <label for="3PM">3-Pointers Made (3P Made):</label>
+        <input type="number" id="3PM" name="3PM" step="0.1" required value="0.2"><br>
+
+        <label for="3PA">3-Point Attempts (3PA):</label>
+        <input type="number" id="3PA" name="3PA" step="0.1" required value="0.5"><br>
+
+        <label for="3PPercent">3-Point Percentage (3P%):</label>
+        <input type="number" id="3PPercent" name="3PPercent" step="0.1" required value="34.2"><br>
+
+        <label for="FTM">Free Throws Made (FTM):</label>
+        <input type="number" id="FTM" name="FTM" step="0.1" required value="4.4"><br>
+
+        <label for="FTA">Free Throw Attempts (FTA):</label>
+        <input type="number" id="FTA" name="FTA" step="0.1" required value="6.0"><br>
+
+        <label for="FTPercent">Free Throw Percentage (FT%):</label>
+        <input type="number" id="FTPercent" name="FTPercent" step="0.1" required value="73.1"><br>
+
+        <label for="OREB">Offensive Rebounds (OREB):</label>
+        <input type="number" id="OREB" name="OREB" step="0.1" required value="3.6"><br>
+
+        <label for="DREB">Defensive Rebounds (DREB):</label>
+        <input type="number" id="DREB" name="DREB" step="0.1" required value="6.6"><br>
+
+        <label for="REB">Total Rebounds (REB):</label>
+        <input type="number" id="REB" name="REB" step="0.1" required value="10.3"><br>
+
+        <label for="AST">Assists (AST):</label>
+        <input type="number" id="AST" name="AST" step="0.1" required value="2.2"><br>
+
+        <label for="STL">Steals (STL):</label>
+        <input type="number" id="STL" name="STL" step="0.1" required value="1.0"><br>
+
+        <label for="BLK">Blocks (BLK):</label>
+        <input type="number" id="BLK" name="BLK" step="0.1" required value="1.3"><br>
+
+        <label for="TOV">Turnovers (TOV):</label>
+        <input type="number" id="TOV" name="TOV" step="0.1" required value="2.9"><br>
+
+
+
+        <button type="submit">predict</button>
+    </form>
+
+
+</body>
+</html>
