@@ -1,6 +1,5 @@
-# mdata_test
 
-This is the core feature for a consulting firm in IT. Basically it is a data task and backend task.
+The exercise requires creating and validating a classifier for investor objectives and then integrating it into a REST API web service for single-player queries.
 
 What can we add? 
 1. Some frontend layer. :heavy_check_mark:
